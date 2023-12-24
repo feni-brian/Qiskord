@@ -10,7 +10,7 @@ export async function PATCH(request: Request, { params }: { params: { serverId: 
 		if (!profile) return new NextResponse("Unauthorized", { status: 401 });
 		if (!params.serverId) return new NextResponse("Missing Server ID", { status: 400 });
 
-		const server = await db.server.update({ where: { id: params.serverId, profileId: profile.id }, data: { inviteCode: uuidv4() } });
+		const server = await db.server.update({ where: { id: params.serverId, profileId: profile.id }, data: { invite: uuidv4() } });
 
 		return NextResponse.json(server);
 	} catch (error) {
