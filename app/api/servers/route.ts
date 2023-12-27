@@ -8,7 +8,7 @@ export async function POST(request: Request) {
 	try {
 		const profile = await currentProfile();
 		const { name, imageUrl } = await request.json();
-		if (!profile) return new NextResponse("Unauthorized", { status: 401 });
+		if (!profile) return new NextResponse("Unauthorized User!", { status: 401 });
 		const server = await db.server.create({
 			data: {
 				profileId: profile.id,
@@ -22,6 +22,6 @@ export async function POST(request: Request) {
 		return NextResponse.json(server);
 	} catch (error) {
 		console.log("[SERVER_POST]", error);
-		return new NextResponse("Internal Server Error", { status: 500 });
+		return new NextResponse("Internal Server Error!", { status: 500 });
 	}
 }
