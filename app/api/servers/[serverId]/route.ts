@@ -17,8 +17,8 @@ export async function DELETE(request: Request, { params }: { params: { serverId:
 export async function PATCH(request: Request, { params }: { params: { serverId: string } }) {
 	try {
 		const profile = await currentProfile();
-		const { name, imageUrl } = await request.json();
 		if (!profile) return new NextResponse("Unauthorized User!", { status: 401 });
+		const { name, imageUrl } = await request.json();
 		const server = await db.server.update({ where: { id: params.serverId, profileId: profile.id }, data: { name, imageUrl } });
 		return NextResponse.json(server);
 	} catch (error) {
