@@ -23,7 +23,7 @@ const createConversation = async (memberOneId: string, memberTwoId: string) => {
 };
 
 export const getOrCreateConversation = async (memberOneId: string, memberTwoId: string) => {
-	let conversation = (await findConversation(memberOneId, memberTwoId)) || (await findConversation(memberTwoId, memberOneId));
-	if (!conversation) conversation = await createConversation(memberOneId, memberTwoId);
+	const conversation = (await findConversation(memberOneId, memberTwoId)) || (await findConversation(memberTwoId, memberOneId));
+	if (!conversation) return await createConversation(memberOneId, memberTwoId);
 	return conversation;
 };
