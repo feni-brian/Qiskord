@@ -7,7 +7,7 @@ const uploadFunc = createUploadthing();
 const handleAuth = () => {
     const { userId } = auth()
     // If you throw, the user will not be able to upload
-    if (!userId) throw new Error("Unauthorized");
+    if (!userId) throw new Error("Unauthorized User!");
     return { userId };
 }
  
