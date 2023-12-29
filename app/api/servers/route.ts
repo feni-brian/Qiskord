@@ -7,15 +7,15 @@ import { v4 as uuidv4 } from "uuid";
 export async function POST(request: Request) {
 	try {
 		const profile = await currentProfile();
-		const { name, imageUrl } = await request.json();
 		if (!profile) return new NextResponse("Unauthorized User!", { status: 401 });
+		const { name, imageUrl } = await request.json();
 		const server = await db.server.create({
 			data: {
 				profileId: profile.id,
 				name,
 				imageUrl,
 				invite: uuidv4(),
-				channels: { create: [{ name: "general", profileId: profile.id }] },
+				channels: { create: [{ name: "General", profileId: profile.id }] },
 				members: { create: [{ profileId: profile.id, role: MemberRole.ADMIN }] },
 			},
 		});
