@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Qiskord
 
-## Getting Started
+![Profile Image](./public/main-page.png)
 
-First, run the development server:
+-------------------------------------
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Introduction
+
+Text messaging, voice calls, video calls, media and file sharing, and instant messaging are all possible on the **Qiskord** social messaging and VoIP platform. Private or public communication can occur in online groups known as "servers." A server is a group of voice channels and live chat rooms that are accessible through invite links. Users may also group themselves into topic-based channels for sharing and cooperation.
+
+To sum up, **Qiskord** is the app where you may hang out with a small group of pals. A online hub that facilitates daily conversation and increased social interaction.
+
+#### Technologies
+
+This project makes use of the ground-breaking capabilities of the Next.js 14 App Router. It also allows for quick client-side routing, which makes the user experience more smooth and intuitive. In addition, the integration of Clerk allows for hassle-free user authentication as well as management.
+
+### Prerequisites
+
+**Node version 18.x.x**
+
+### Install Packages
+
+Choose the package manager of your choice; `npm i` or `yarn add`
+~~~
+    @clerk/nextjs
+    @emoji-mart/data
+    @emoji-mart/react
+    @hookform/resolvers
+    @livekit/components-react
+    @livekit/components-styles
+    @planetscale/database
+    @prisma/client
+    @tanstack/react-query
+    @uploadthing/react
+    axios
+    class-variance-authority
+    clsx
+    cmdk
+    date-fns
+    dotenv
+    emoji-mart
+    livekit-client
+    livekit-server-sdk
+    lucide-react
+    next
+    next-themes
+    query-string
+    react
+    react-dom
+    react-dropzone
+    react-hook-form
+    socket.io
+    socket.io-client
+    tailwind-merge
+    tailwindcss-animate
+    uploadthing
+    uuid
+    zod
+    zustand
+~~~
+
+#### Shadcn UI
+For shadcn components, `npx shadcn-ui@latest add [component]` Replace \[component\] with the name of the ui component you wish to install.
+Here's some examples used in the project:
+
+| component     | description |
+|:--------------|:------------|
+|`avatar`        |An image element with a fallback for representing the user.|
+|`button`        |Displays a button or a component that looks like a button.|
+|`command`          |Fast, composable, unstyled command menu for React.|
+|`dialog`        |A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.|
+|`dropdown-menu` |Displays a menu to the user — such as a set of actions or functions — triggered by a button.|
+|`form`  |This component is a wrapper around the `react-hook-form` library that provides a few extra things such as composable components for building forms, a `<FormField />` component for building controlled form fields, form validation using `zod`, etc,.|
+|`input`         |Displays a form input field or a component that looks like an input field.|
+|`label`         |Renders an accessible label associated with controls.|
+|`popover`        |Displays rich content in a portal, triggered by a button.|
+|`scroll-area`     |Augments native scroll functionality for custom, cross-browser styling.|
+|`select`     |Displays a list of options for the user to pick from—triggered by a button.|
+|`separator`     |Visually or semantically separates content.|
+|`sheet`     |Extends the Dialog component to display content that complements the main content of the screen.|
+|`tooltip`     |A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.|
+
+### Setup `.env` file
+
+```
+# Deployment used by `npx run dev`
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+CLERK_SECRET_KEY=
+
+DATABASE_HOST=
+DATABASE_USERNAME=
+DATABASE_PASSWORD=
+DATABASE_URL=
+
+UPLOADTHING_SECRET=
+UPLOADTHING_APP_ID=
+
+LIVEKIT_API_KEY=
+LIVEKIT_API_SECRET=
+NEXT_PUBLIC_LIVEKIT_URL=
+
+NEXT_PUBLIC_APP_URL="http://localhost:3000"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Credits
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+All the credit 👏🏾 for this project goes to [Antonio Erdeljac](https://www.youtube.com/@codewithantonio) 🌟. He build the original project on which this was based. 
+Watch and follow the step by step tutorial here [Youtube Tutorial](https://youtu.be/ZbX4Ok9YX94). Don't forget to leave a like and subscribe if you enjoy it. 
+You can follow along with the code from the project's [Github Repo](https://github.com/AntonioErdeljac/next13-discord-clone.git) here. Leave a star if you wish.
